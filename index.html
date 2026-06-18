@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduFlow — Learning Management System</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginScreen">
+  <div class="login-left">
+    <div class="login-brand">EduFlow</div>
+    <div class="login-tagline">Where knowledge<br>finds its path.</div>
+    <div class="login-stats">
+      <div class="ls"><span>12</span>Courses</div>
+      <div class="ls"><span>500+</span>Students</div>
+      <div class="ls"><span>98%</span>Pass Rate</div>
+    </div>
+  </div>
+  <div class="login-right">
+    <div class="login-box">
+      <div class="login-logo">⚡</div>
+      <h2>Sign in to EduFlow</h2>
+      <p>Choose your role and enter your credentials</p>
+      <div class="role-toggle">
+        <button class="rt-btn active" id="rtStudent" onclick="pickRole('student')">🎓 Student</button>
+        <button class="rt-btn" id="rtTeacher" onclick="pickRole('teacher')">📋 Instructor</button>
+      </div>
+      <div class="inp-group">
+        <label>Email Address</label>
+        <input type="email" id="lgEmail" placeholder="your@email.com">
+      </div>
+      <div class="inp-group">
+        <label>Password</label>
+        <input type="password" id="lgPass" placeholder="••••••••">
+      </div>
+      <div id="lgErr" class="lg-err hidden">Invalid credentials. Check hints below.</div>
+      <button class="signin-btn" onclick="doLogin()">Sign In →</button>
+      <div class="demo-hint">
+        <b>Demo:</b> student@edu.com / pass123 &nbsp;|&nbsp; teacher@edu.com / pass123
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="appScreen" class="hidden">
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-brand">
+      <span class="sb-logo">⚡</span>
+      <span class="sb-name">EduFlow</span>
+    </div>
+    <div class="sb-user" id="sbUser"></div>
+    <nav class="sb-nav" id="sbNav"></nav>
+    <button class="sb-logout" onclick="doLogout()">↩ Logout</button>
+  </aside>
+
+  <div class="app-body">
+    <header class="topbar">
+      <div class="tb-title" id="tbTitle">Dashboard</div>
+      <div class="tb-right">
+        <div class="notif-bell">🔔<span class="notif-dot"></span></div>
+        <div class="tb-avatar" id="tbAvatar">S</div>
+      </div>
+    </header>
+    <main class="page" id="mainPage"></main>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
